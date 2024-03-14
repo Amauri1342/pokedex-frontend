@@ -1,19 +1,14 @@
 :root {
   /* Color Variables  */
-  --background: rgb(255, 255, 255);
-  --primary-orange: #FC6E35;
-  --primary-blue: #00ADEA;
-  --primary-darkblue: #002B5E;
-  --trans-orange-v1:rgba(252, 110, 53, 0.15);
-  --trans-blue-v1:rgba(0, 173, 234, 0.15);
-  --trans-darkblue-v1:rgba(0, 43, 94, 0.15);
-  --trans-orange-v2:rgba(252, 110, 53, 0.45);
-  --trans-blue-v2:rgba(0, 173, 234, 0.45);
-  --trans-darkblue-v2:rgba(0, 43, 94, 0.45);
-  --secondary-lightorange:#D68261;
-  --secondary-lightblue:#6F98B7;
-  --secondary-darkorange:#C2562B;
-  --secondary-darkblue:#316B98;
+  --background: #FDFAFA;
+  --text-color: #191717;
+  --primary-red: #cc322a;
+  --primary-yellow: #e6d596;
+  --primary-pink: #b45c64;
+  
+  --secondary-red:#642c34;
+  --secondary-brown:#4c3434;
+  --secondary-blue:#a7b9d3;
 
   /* Font Variables  */
   /* --font-light: 'UniNeueLight';
