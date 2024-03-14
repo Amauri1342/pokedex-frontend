@@ -7,6 +7,7 @@ const navItems = [
   { path: '/user', text:'Usuario'},
   { path: '/pricing', text:'Precios'},
   { path: '/contact', text:'Contáctanos'},
+  { path: '/pokedex', text:'Pokedezuwu'},
 ]
 
 const Sidebar = () => {
