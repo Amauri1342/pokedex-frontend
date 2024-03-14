@@ -1,3 +1,4 @@
+'use client';
 import React from "react";
 import Link from "next/link";
 import styles from "./LoginBox.module.css";
@@ -72,6 +73,9 @@ const LoginBox = () => {
           <div className={styles.formInputs}>
             <RHFTextField name="email" label="Correo" />
             <RHFTextField name="pass" label="Contraseña" />
+            <RHFTextField name="pass_c" label="Confirmar Contraseña" />
+            <RHFTextField name="name" label="Nombre" />
+            <RHFTextField name="last_name" label="Apellido" />
 
             <LoadingButton type="submit" variant="contained" loading={isSubmitting} sx={buttonStyle}>
               Enviar

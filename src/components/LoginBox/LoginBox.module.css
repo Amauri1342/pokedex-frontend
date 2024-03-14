@@ -43,6 +43,7 @@
     width: 90%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     padding: 5%;
     gap: 1%;
     border-radius: 50px; 
@@ -67,4 +68,10 @@
     gap: 1%;
     border-radius: 50px;
     cursor: pointer;
+}
+
+.formInputs{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
