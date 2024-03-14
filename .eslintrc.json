@@ -1,3 +1,82 @@
+/* eslint-disable camelcase */
 {
-  "extends": ["next/babel"]
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier"
+  ],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "prettier"
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "requireConfigFile": false,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "impliedStrict": true
+    }
+  },
+  "rules": {
+    "no-new": "off",
+    "no-alert": "off",
+    "no-shadow": "off",
+    "no-console": "off",
+    "react/jsx-key": "warn",
+    // "import/no-cycle": "off",
+    "arrow-body-style": "warn",
+    "react/prop-types": "off",
+    "no-param-reassign": "off",
+    "no-nested-ternary": "off",
+    "default-param-last": "off",
+    "no-use-before-define": "off",  //no definir elementos antes de usarlos. (está desactivado por un tema de Props.Types)
+    "no-underscore-dangle": "off",
+    "no-extra-boolean-cast": "warn",
+    "react/button-has-type": "warn",
+    "no-restricted-exports": "off",
+    "react/no-children-prop": "off",
+    "react/forbid-prop-types": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/no-array-index-key": "off",
+    "react/no-unused-prop-types": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "off",
+    "no-promise-executor-return": "off",
+    "no-unsafe-optional-chaining": "off",
+    "react/require-default-props": "off",
+    "react/no-unescaped-entities": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-no-duplicate-props": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "react/jsx-curly-brace-presence": "off",
+    "react/destructuring-assignment": "off",
+    // "import/no-extraneous-dependencies": "off",
+    "react/no-unstable-nested-components": "off",
+    "react/function-component-definition": "off",
+    "react/jsx-no-constructed-context-values": "off",
+    "no-unused-vars": [
+      "off",
+      {
+        "ignoreRestSiblings": false
+      }
+    ],
+    "prefer-destructuring": [
+      "warn",
+      {
+        "object": true,
+        "array": false
+      }
+    ]
+  }
 }

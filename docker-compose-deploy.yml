@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  app:
+    container_name: pokedex-front-develop
+    image: pokedex-front-develop
+    build:
+      context: .
+      dockerfile: Dockerfile.deploy
+    labels:
+      - traefik.enable=true
+      - traefik.http.services.app-frontend.loadbalancer.server.port=3000
+      - traefik.http.routers.pokedex-frontend.entrypoints=http
+      - traefik.http.routers.pokedex-frontend.rule=Host(`192.168.201.139`)
+      - traefik.docker.network=frontend-network
+    environment:
+      - GENERATE_SOURCEMAP=${GENERATE_SOURCEMAP}
+      - PORT=${PORT}
+      - REACT_APP_HOST_API_KEY=${REACT_APP_HOST_API_KEY}
+    volumes:
+      - ./src:/app/src
+    networks:
+      - frontend-network
+
+
+networks:
+  frontend-network:
+    external: true
