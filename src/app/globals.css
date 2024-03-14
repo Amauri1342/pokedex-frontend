@@ -11,17 +11,14 @@
   --secondary-blue:#a7b9d3;
 
   /* Font Variables  */
-  /* --font-light: 'UniNeueLight';
-  --font-regular: 'UniNeueRegular';
-  --font-heavy: 'UniNeueHeavy';
-  --font-black: 'UniNeueBlack'; */
+  --font-title-pokemon: 'PokemonSolid';
 }
 
-/* @font-face {
-  font-family: UniNeueLight;
-  src: url('/Fonts/UniNeueLight.otf');
+@font-face {
+  font-family: PokemonSolid;
+  src: url('/fonts/PokemonSolid.ttf');
 }
-
+/*
 @font-face {
   font-family: UniNeueRegular;
   src: url('/Fonts/UniNeueRegular.otf');
