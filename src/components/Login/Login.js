@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
+import React, {useState} from "react";
 import Link from "next/link";
 import styles from "./Login.module.css";
-
+import { IconButton, InputAdornment } from '@mui/material';
+import { Icon } from "@iconify/react";
 // Form components
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -12,9 +13,14 @@ import FormProvider from "../Form_Components/FormProvider";
 import RHFTextField from "../Form_Components/RHFTextField";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
   //yup
   const Schema = yup.object().shape({
-    email: yup.string().required("Este campo debe estar lleno"),
+    email: yup
+      .string()
+      .email("El email debe ser válido")
+      .required("Este campo debe estar lleno"),
     pass: yup.string().required("Este campo debe estar lleno"),
   });
 
@@ -53,7 +59,9 @@ const Login = () => {
   return (
     <div className={styles.login_container}>
       <div className={styles.container_cover}>
-        <p className={styles.title}>Bienvenido a la <span className={styles.title_cute}>Pokédex </span></p>
+        <p className={styles.title}>
+          Bienvenido a la <span className={styles.title_cute}>Pokédex </span>
+        </p>
         <img
           alt="pokedex.png"
           src="/general_media/pokedex.png"
@@ -66,7 +74,20 @@ const Login = () => {
         <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.formInputs}>
             <RHFTextField name="email" label="Correo" />
-            <RHFTextField name="pass" label="Contraseña" />
+            <RHFTextField
+              name="pass"
+              label="Contraseña"
+              type={showPassword ? "text" : "password"}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
+                      <Icon icon={showPassword ? 'eva:eye-fill' : 'eva:eye-off-fill'} />
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+            />
 
             <LoadingButton
               type="submit"
@@ -82,7 +103,11 @@ const Login = () => {
           <p> ¿Olvidaste tu contraseña? </p>
           <Link href={"/sing_up"}> Crear cuenta </Link>
         </div>
-        <img alt= "pokebola.png" src="/general_media/pokebola.png" className={styles.image_opacity}/>
+        <img
+          alt="pokebola.png"
+          src="/general_media/pokebola.png"
+          className={styles.image_opacity}
+        />
       </div>
     </div>
   );
