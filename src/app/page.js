@@ -1,10 +1,13 @@
-import styles from "./page.module.css";
-import Login from "@/components/Login/Login";
+import styles from './page.module.css';
+import Login from '@/components/Login/Login';
+import Providers from './providers';
 
 export default function Home() {
   return (
-    <main>
-      <Login/>
-    </main>
+    <Providers>
+      <main>
+        <Login />
+      </main>
+    </Providers>
   );
 }

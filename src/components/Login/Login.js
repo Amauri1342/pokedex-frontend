@@ -12,9 +12,18 @@ import { LoadingButton } from "@mui/lab";
 import FormProvider from "../Form_Components/FormProvider";
 import RHFTextField from "../Form_Components/RHFTextField";
 
+import useTest from "./hook/useTest";
+
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
+  const params = {
+    semana_id: "10",
+    seccion_id: "A1",
+  }
+
+  const {data}= useTest(params);
+  
   //yup
   const Schema = yup.object().shape({
     email: yup
