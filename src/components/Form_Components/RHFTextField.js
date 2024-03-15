@@ -1,50 +1,31 @@
-"use client";
 import React from 'react';
 import PropTypes from 'prop-types';
 // form
 import { useFormContext, Controller } from 'react-hook-form';
 // @mui
 import { TextField } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles'; // Añade esta importación
 
 // ----------------------------------------------------------------------
-const theme = createTheme({
-  components: {
-    MuiFormHelperText: {
-      styleOverrides: {
-        root: {
-          '&.Mui-error': {
-            fontSize:'1.2rem',
-          },
-        },
-      },
-    },
-  },
-});
 
 const RHFTextField = React.forwardRef(({ name, ...other }, ref) => {
   const { control } = useFormContext();
 
   return (
-    <ThemeProvider theme={theme}> {/* Aplica el tema personalizado */}
-      <Controller
-        name={name}
-        control={control}
-        render={({ field, fieldState: { error } }) => (
-          <>
-            <TextField
-              {...field}
-              fullWidth
-              value={field.value !== undefined ? field.value : ''}
-              error={!!error}
-              helperText={error?.message}
-              ref={ref}
-              {...other}
-            />
-          </>
-        )}
-      />
-    </ThemeProvider>
+    <Controller
+      name={name}
+      control={control}
+      render={({ field, fieldState: { error } }) => (
+        <TextField
+        {...field}
+        fullWidth
+        value={typeof field.value === 'number' && field.value === 0 ? '' : field.value}
+        error={!!error}
+        helperText={error?.message}
+        ref={ref} // Agrega la referencia (ref) al TextField
+        {...other}
+        />
+      )}
+    />
   );
 });
 

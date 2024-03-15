@@ -12,18 +12,18 @@
     background-color: var(--background);
     width: 500px;
     height: 100vh;
-    padding: 50px;
+    padding: 5% 50px 50px 50px;
 }
 
 .title {
-    font-size: 3.5rem;
+    font-size: 1.86rem;
     text-align: center;
     font-weight: bold;
 }
 .title_cute{
     font-weight: lighter;
     color: yellow;
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-family: var(--font-title-pokemon);
     letter-spacing: 2px;
     filter: drop-shadow(8px -12px 0px #003cff);
@@ -61,7 +61,7 @@
 .container_options{
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    font-size: 1.5rem;
+    gap: 10px;
+    font-size: 0.95rem;
     align-items: flex-end;
 }

@@ -1,6 +1,6 @@
 :root {
   /* Color Variables  */
-  --background: #f3efef;
+  --background: #fafafa;
   --text-color: #191717;
   --primary-red: #cc322a;
   --primary-yellow: #e6d596;
@@ -44,7 +44,7 @@
 
 html {
   scroll-behavior: smooth!important;
-  font-size: 62.5%;
+  font-family:'Times New Roman', Times, serif;
   }
 
 a{

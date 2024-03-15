@@ -12,17 +12,8 @@ import { LoadingButton } from "@mui/lab";
 import FormProvider from "../Form_Components/FormProvider";
 import RHFTextField from "../Form_Components/RHFTextField";
 
-import useTest from "./hook/useTest";
-
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-
-  const params = {
-    semana_id: "10",
-    seccion_id: "A1",
-  }
-
-  const {data}= useTest(params);
   
   //yup
   const Schema = yup.object().shape({
@@ -55,7 +46,7 @@ const Login = () => {
   };
 
   const buttonStyle = {
-    fontSize: "1.6rem",
+    fontSize: "1rem",
     backgroundColor: "var(--primary-red)",
     color: "white",
     width: "100%",
@@ -104,7 +95,7 @@ const Login = () => {
               loading={isSubmitting}
               sx={buttonStyle}
             >
-              Enviar
+              Iniciar sesión
             </LoadingButton>
           </div>
         </FormProvider>

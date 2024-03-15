@@ -1,77 +1,56 @@
 .container_form {
-    background-color: var(--secondary-blue);
-    border-radius: 10px; /* Define el radio de los bordes */
-    padding: 20px; /* Espaciado interno */
-    margin: 10%;
-    width: 50%;
-    height: 75%;
+    background-color: var(--background);
+    border-radius: 10px 0px 0px 10px; /* Define el radio de los bordes */
+    padding: 60px 5% 20px 5%; 
+    width: 60%;
+    height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     gap: 20px;
 }
+.logo {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0px 50px;
+    margin-top: -20px;
+}
+
+.title_cute {
+    font-weight: lighter;
+    color: yellow;
+    font-size: 3rem;
+    font-family: var(--font-title-pokemon);
+    letter-spacing: 2px;
+    filter: drop-shadow(8px -12px 0px #003cff);
+    -webkit-text-stroke: 1px #003cff;
+}
 
 .title {
-    color: yellow;
-    font-size: 60px;
-    font-family: var(--font-title-pokemon);
-    text-shadow: 
-        -1px -1px 0 #003cff,  
-         10px -10px 0 #003cff,
-        -1px  1px 0 #003cff,
-         1px  1px 0 #003cff;
+    color: var(--text-color);
+    font-size: 2rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-bottom: 50px;
 }
 
 .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: var(--primary-yellow);
     width: 100%;
     height: 100vh;
-}
-
-.container .container_separator{
-    display: flex;
-    width: 50%;
-    height: 100vh;
-}
-
-.item {
-    background-color: var(--background);
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 5%;
-    gap: 1%;
-    border-radius: 50px; 
-}
-
-.button {
-    background-color: var(--primary-red);
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    padding: 5%;
-    gap: 1%;
-    border-radius: 50px; 
-}
-
-.button:hover {
-    background-color: var(--primary-red);
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    padding: 5%;
-    gap: 1%;
-    border-radius: 50px;
-    cursor: pointer;
 }
 
 .formInputs{
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+.image_gif{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
 }

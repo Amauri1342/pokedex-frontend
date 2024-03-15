@@ -5,7 +5,6 @@ export default function Sing_up () {
     return(
         <div>
             <LoginBox/>
-            <span>hola</span>
         </div>
     );
 }

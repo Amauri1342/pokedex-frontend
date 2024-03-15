@@ -2,24 +2,47 @@ import axios from './axios'
 
 
 export default {
-  cotizador: {
-    getSemanas (filter) {
-      return axios.get('/api/quoter/semanas_disponibles/', { params: filter })
+  auth: {
+    login (credentials) {
+      return axios.post('/api/token/', credentials)
     },
-    getZonas (filter) {
-      return axios.get('/api/quoter/secciones_disponibles/', { params: filter })
+    refresh (refresh) {
+      return axios.post('/api/token/refresh/', { refresh })
     },
-    getDepartamentos (filter) {
-      return axios.get('/api/quoter/departamentos_disponibles/', { params: filter})
+    getUser() {
+      return axios.get('/api/user/me/')
     },
-    getDepartamento (filter) {
-      return axios.get('/api/quoter/semana_departamento/', { params: filter})
+    // getDepartamentos (filter) {
+    //   return axios.get('/api/quoter/departamentos_disponibles/', { params: filter})
+    // },
+    // resetPassword (data) {
+    //   return axios.post('/api/user/reset-password/', data)
+    // },
+    // actualizarUsuario(data) {
+    //   return axios.patch(`/api/user/me/`, data)
+    // },
+    // changePassword(data) {
+    //   return axios.put('/api/user/change-password/', data)
+    // },
+    // actualizarImagenUsuario(imagen) {
+    //   return axios.patch(`/api/user/me/upload-image/`, imagen, { headers: {'Content-Type': 'multipart/form-data'}})
+    // },
+  },
+
+  usuarios: {
+    usuarios: {
+      createUsuario(data) {
+        return axios.post('api/user/create/', data, { headers: {'Content-Type': 'multipart/form-data'}})
+      },
+      // deleteUsuario(id) {
+      //   return axios.delete(`api/user/user/${id}` )
+      // },
+      actualizarUsuario(data) {
+        return axios.patch('api/user/user/me/', data)
+      },
+      actualizarUsuarioImg(imagen) {
+        return axios.patch(`/api/user/upload-image/`, imagen, { headers: {'Content-Type': 'multipart/form-data'}})
+      }
     },
-    createCotizacio (data) {
-      return axios.post('/api/quoter/cotizacion/create', data)
-    },
-    postContacto (data){
-      return axios.post('/api/contact/create', data)
-    }
   },
 }
