@@ -2,24 +2,29 @@ import axios from './axios'
 
 
 export default {
-  cotizador: {
-    getSemanas (filter) {
-      return axios.get('/api/quoter/semanas_disponibles/', { params: filter })
+  auth: {
+    login (credentials) {
+      return axios.post('/api/token/', credentials)
     },
-    getZonas (filter) {
-      return axios.get('/api/quoter/secciones_disponibles/', { params: filter })
+    refresh (refresh) {
+      return axios.post('/api/token/refresh/', { refresh })
     },
-    getDepartamentos (filter) {
-      return axios.get('/api/quoter/departamentos_disponibles/', { params: filter})
+    getUser() {
+      return axios.get('/api/user/me/')
     },
-    getDepartamento (filter) {
-      return axios.get('/api/quoter/semana_departamento/', { params: filter})
+  },
+
+  usuarios: {
+    usuarios: {
+      createUsuario(data) {
+        return axios.post('api/user/create/', data)
+      },
+      actualizarUsuario(data) {
+        return axios.patch('api/user/user/me/', data)
+      },
+      actualizarUsuarioImg(imagen) {
+        return axios.patch(`/api/user/upload-image/`, imagen, { headers: {'Content-Type': 'multipart/form-data'}})
+      }
     },
-    createCotizacio (data) {
-      return axios.post('/api/quoter/cotizacion/create', data)
-    },
-    postContacto (data){
-      return axios.post('/api/contact/create', data)
-    }
   },
 }
