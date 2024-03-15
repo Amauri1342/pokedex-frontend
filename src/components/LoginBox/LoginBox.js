@@ -13,10 +13,15 @@ import { LoadingButton } from '@mui/lab';
 import FormProvider from '../Form_Components/FormProvider';
 import RHFTextField from '../Form_Components/RHFTextField';
 
+//Hooks
+import useMutateAccount from './hooks/useMutationAccount';
+
 YupPassword(yup);
 const LoginBox = () => {
   const [showOldPassword, setShowOldPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
+
+  const mutations = useMutateAccount();
 
   //yup
   const Schema = yup.object().shape({
@@ -49,8 +54,16 @@ const LoginBox = () => {
     reset,
   } = methods;
 
-  const onSubmit = async (data) => {
-    console.log('Datos del registro:', data);
+  const onSubmit = async (formData) => {
+    const dataToSend = {
+      email: formData.email,
+      password: formData.pass,
+      nombre: formData.name,
+      primer_apellido: formData.last_name
+  };
+    console.log('Datos del registro:', dataToSend);
+
+    await mutations.User.create.mutateAsync(dataToSend)
     reset();
   };
 
@@ -99,7 +112,7 @@ const LoginBox = () => {
                     ),
                   }}
                 />
-                
+
                 <RHFTextField
                   name="pass_confirm"
                   type={showNewPassword ? "text" : "password"}
